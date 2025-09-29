@@ -1052,7 +1052,7 @@ try { //Start everything
     } {
         const button = getId('makeAllStructures');
         const footer = getId('makeAllFooter');
-        const clickFooterFunc = global.hotkeys.shift ? createAll : buyAll;
+        const clickFooterFunc = () => (global.hotkeys.shift ? createAll : buyAll)();
         button.addEventListener('click', buyAll);
         footer.addEventListener('click', clickFooterFunc);
         if (PC) {

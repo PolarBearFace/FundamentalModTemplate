@@ -549,9 +549,9 @@ export const assignBuildingsProduction = {
         const vacuum = player.inflation.vacuum;
         const index = vacuum ? 4 : 2;
 
-        let multiplier = (vacuum ? 0.8 : 0.4) * effectsCache.microworld * (effectsCache.S1Upgrade7 ** player.buildings[1][index].true);
+        let multiplier = (vacuum ? 0.8 : 0.4) * effectsCache.microworld;
         if (player.upgrades[1][3] === 1) { multiplier *= vacuum ? 6 : 4; }
-        return global.buildingsInfo.producing[1][index].setValue(multiplier).multiply(player.buildings[1][index].current);
+        return global.buildingsInfo.producing[1][index].setValue(effectsCache.S1Upgrade7).power(player.buildings[1][index].true).allMultiply(multiplier, player.buildings[1][index].current);
     },
     /** Molecules, visual will assign effect */
     S1Build5: (visual = false): number => {
