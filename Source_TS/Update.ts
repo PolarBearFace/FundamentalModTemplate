@@ -1098,7 +1098,7 @@ export const visualUpdate = (ignoreOffline = false) => {
                 getId('strange10Stage2').style.display = voidProgress[2] >= 2 ? '' : 'none';
                 getId('strange5Stage3').style.display = voidProgress[4] >= 1 || show3 ? '' : 'none';
                 getId('strange9Stage3').style.display = voidProgress[4] >= 4 ? '' : 'none';
-                getId('strange10Stage3').style.display = voidProgress[5] >= 1 || (player.challenges.active === 0 && player.challenges.super && player.tree[1][6] >= 4) ? '' : 'none';
+                getId('strange10Stage3').style.display = voidProgress[5] >= 1 ? '' : 'none';
                 getId('strange5Stage4').style.display = voidProgress[4] >= 1 || show3 ? '' : 'none';
                 getId('strange9Stage4').style.display = voidProgress[4] >= 3 ? '' : 'none';
                 getId('strange10Stage4').style.display = voidProgress[4] >= 5 ? '' : 'none';
