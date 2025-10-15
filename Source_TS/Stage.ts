@@ -3017,6 +3017,7 @@ const awardVoidReward = (index: number): void => {
     } else if (index === 5) {
         if (player.merge.resets >= 1) { progress++; }
         if (player.merge.rewards[0] >= 1) { progress++; }
+        if (player.merge.rewards[1] >= 1) { progress++; }
     }
 
     const pointer = challenges.void;

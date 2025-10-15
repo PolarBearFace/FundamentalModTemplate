@@ -676,8 +676,6 @@ export const visualUpdate = (ignoreOffline = false) => {
         } else if (highest === 1) {
             if (player.upgrades[1][9] === 1) { playEvent(1, false); }
         }
-    } else if (highest === 7 && player.challenges.supervoid[1] < 1 && !player.challenges.super) {
-        errorNotify("To toggle the Supervoid you need to click the 'Void' button");
     }
 
     {
