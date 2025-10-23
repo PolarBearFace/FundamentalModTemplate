@@ -147,7 +147,7 @@ export const player: playerType = {
 export const global: globalType = {
     tabs: {
         current: 'stage',
-        list: ['stage', 'upgrade', 'strangeness', 'inflation', 'settings'],
+        list: ['stage', 'upgrade', 'strangeness', 'inflation', 'cheats', 'settings'],
         stage: {
             current: 'Structures',
             list: ['Structures', 'Advanced']
@@ -163,6 +163,10 @@ export const global: globalType = {
         inflation: {
             current: 'Inflations',
             list: ['Inflations', 'Milestones']
+        },
+        cheats: {
+            current: 'Cheats',
+            list: ['Cheats']
         },
         settings: {
             current: 'Settings',

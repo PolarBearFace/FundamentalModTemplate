@@ -1,7 +1,7 @@
 import { player, global, updatePlayer, prepareVacuum, fillMissingValues } from './Player';
 import { getUpgradeDescription, switchTab, numbersUpdate, visualUpdate, format, getChallengeDescription, getChallenge0Reward, getChallenge1Reward, stageUpdate, getStrangenessDescription, addIntoLog, updateCollapsePoints } from './Update';
 import { assignBuildingsProduction, autoElementsSet, autoResearchesSet, autoUpgradesSet, buyBuilding, buyStrangeness, buyUpgrades, buyVerse, collapseResetUser, dischargeResetUser, endResetUser, enterExitChallengeUser, inflationRefund, mergeResetUser, nucleationResetUser, rankResetUser, setActiveStage, stageResetUser, switchStage, timeUpdate, toggleSupervoid, vaporizationResetUser } from './Stage';
-import { Alert, Prompt, setTheme, changeFontSize, changeFormat, specialHTML, replayEvent, Confirm, preventImageUnload, Notify, MDStrangenessPage, globalSave, toggleSpecial, saveGlobalSettings, openHotkeys, openVersionInfo, openLog, errorNotify } from './Special';
+import { Alert, Prompt, setTheme, changeFontSize, changeFormat, specialHTML, replayEvent, Confirm, preventImageUnload, Notify, MDStrangenessPage, globalSave, toggleSpecial, saveGlobalSettings, openHotkeys, openVersionInfo, openLog, errorNotify, loadSaveA, cheatStrangeQuarks, cheatStrangelets, cheatInflations, cheatCosmons } from './Special';
 import { assignHotkeys, buyAll, createAll, detectHotkey, detectShift, handleTouchHotkeys, offlineWarp, toggleAll } from './Hotkeys';
 import { checkUpgrade } from './Check';
 import type { hotkeysList } from './Types';
@@ -266,7 +266,7 @@ const saveGame = (noSaving = false): string | null => {
         throw error;
     }
 };
-const loadGame = (save: string) => {
+export const loadGame = (save: string) => {
     if (global.offline.active) { return; }
     pauseGame();
     try {
@@ -1583,7 +1583,12 @@ try { //Start everything
         button.addEventListener('touchstart', () => repeatFunction(clickFunc));
         if (PC) { button.addEventListener('mousedown', () => repeatFunction(clickFunc)); }
     }
-
+    /* Cheats tab */
+    getId('cheatStrangeQuarksBtn').addEventListener('click', cheatStrangeQuarks);
+    getId('cheatStrangeletsBtn').addEventListener('click', cheatStrangelets);
+    getId('cheatInflationsBtn').addEventListener('click', cheatInflations);
+    getId('cheatCosmonsBtn').addEventListener('click', cheatCosmons);
+    getId('loadSaveA').addEventListener('click', loadSaveA);
     /* Settings tab */
     for (const number of [0, 2, 4, 9, 10]) {
         const button = getId(`toggleAuto${number}Info`);

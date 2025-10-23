@@ -19,6 +19,8 @@ export const checkTab = (tab: gameTab, subtab = null as null | gameSubtab): bool
         case 'inflation':
             if (player.stage.true < 7) { return false; }
             return subtab === 'Inflations' || subtab === 'Milestones' || subtab === null;
+        case 'cheats':
+            return subtab === 'Cheats' || subtab === null;
         case 'settings':
             if (subtab === 'History') { return player.stage.true >= 7 || player.strange[0].total > 0; }
             return subtab === 'Settings' || subtab === 'Stats' || subtab === null;
