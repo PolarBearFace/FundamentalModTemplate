@@ -20,3 +20,5 @@ If you want to report a bug (here or on discord), try to give details on how it 
 ##### You can add `:map` if you need to see from which file and line, error has came from in a browser.
 3. `npm lint` - to check if there are any obvious mistakes in .ts file, also helps to keep same style.
 4. `npm fix` - will auto fix lint for you that it can by itself.
+
+This is a mod template containing a cheats tab to make development easier. Modding the game is easy, just understanding the code structure can be somewhat difficult.
